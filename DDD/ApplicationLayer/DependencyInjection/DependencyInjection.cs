@@ -1,6 +1,4 @@
-﻿
-
-using ApplicationLayer.Services;
+﻿using ApplicationLayer.Services.Authentication;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ApplicationLayer.DependencyInjection

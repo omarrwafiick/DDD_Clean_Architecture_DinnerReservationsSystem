@@ -1,6 +1,4 @@
-﻿ 
-
-namespace ApplicationLayer.Services
+﻿namespace ApplicationLayer.Services.Authentication
 {
     public interface IAuthService
     {
