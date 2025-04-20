@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BIeiapcM5Ok=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\ApplicationLayer\\ApplicationLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sphinx\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.4\\microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
