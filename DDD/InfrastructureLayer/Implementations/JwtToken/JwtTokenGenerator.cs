@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Common.Interfaces.Authentication;
+﻿using ApplicationLayer.Common.Interfaces.JwtToken;
 using ApplicationLayer.Common.Services;
 using DomainLayer.Entities;
 using Microsoft.Extensions.Options;
@@ -7,7 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace InfrastructureLayer.Implementations
+namespace InfrastructureLayer.Implementations.JwtToken
 {
     public class JwtTokenGenerator : IJwtTokenGenerator
     {
@@ -36,8 +36,8 @@ namespace InfrastructureLayer.Implementations
                 issuer: _jwtSettings.Issuer,
                 audience: _jwtSettings.Audience,
                 expires: _dateTimeProvider.Now.AddMinutes(_jwtSettings.ExpiresIn),
-                claims: claims, 
-                signingCredentials: siginingCredentials );
+                claims: claims,
+                signingCredentials: siginingCredentials);
 
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
         }

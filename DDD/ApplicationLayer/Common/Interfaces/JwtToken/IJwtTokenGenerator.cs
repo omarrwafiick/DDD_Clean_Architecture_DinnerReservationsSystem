@@ -2,7 +2,7 @@
 
 using DomainLayer.Entities;
 
-namespace ApplicationLayer.Common.Interfaces.Authentication
+namespace ApplicationLayer.Common.Interfaces.JwtToken
 {
     public interface IJwtTokenGenerator
     {

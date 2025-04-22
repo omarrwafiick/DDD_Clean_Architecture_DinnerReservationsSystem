@@ -10,11 +10,24 @@
         "dependencies": {
           "ApplicationLayer": "1.0.0",
           "Contracts": "1.0.0",
+          "FluentResults": "3.16.0",
           "InfrastructureLayer": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
           "PresentationLayer.dll": {}
+        }
+      },
+      "FluentResults/3.16.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentResults.dll": {
+            "assemblyVersion": "3.16.0.0",
+            "fileVersion": "3.16.0.0"
+          }
         }
       },
       "Microsoft.Bcl.Memory/9.0.0": {
@@ -172,9 +185,11 @@
           }
         }
       },
+      "System.Threading.Tasks.Extensions/4.5.4": {},
       "ApplicationLayer/1.0.0": {
         "dependencies": {
           "DomainLayer": "1.0.0",
+          "FluentResults": "3.16.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.4"
         },
         "runtime": {
@@ -193,6 +208,9 @@
         }
       },
       "DomainLayer/1.0.0": {
+        "dependencies": {
+          "FluentResults": "3.16.0"
+        },
         "runtime": {
           "DomainLayer.dll": {
             "assemblyVersion": "1.0.0",
@@ -221,6 +239,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentResults/3.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VWacGzOyN9k7LOKqiNLnFvqTDLbFvepHlINdM3pPTD0YWI+a+VW/Q9gcx4gmJDpDZ32cAsczz5vmRjLCL5UOhA==",
+      "path": "fluentresults/3.16.0",
+      "hashPath": "fluentresults.3.16.0.nupkg.sha512"
     },
     "Microsoft.Bcl.Memory/9.0.0": {
       "type": "package",
@@ -361,6 +386,13 @@
       "sha512": "sha512-/oIQ5jhVxpzutFOPYIxmvkVMCLLDwpN0CLcXjyxPflVRQGZRYi5x2IqHeJw+xJ2k2HUPmeTaM18La5wDbhJcQA==",
       "path": "system.identitymodel.tokens.jwt/8.8.0",
       "hashPath": "system.identitymodel.tokens.jwt.8.8.0.nupkg.sha512"
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
     "ApplicationLayer/1.0.0": {
       "type": "project",

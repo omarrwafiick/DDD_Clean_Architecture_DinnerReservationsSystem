@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{159CF1A1-6AE9-4863-803B-A1C1B1F5D818}|ApplicationLayer\\ApplicationLayer.csproj|c:\\users\\sphinx\\documents\\my projects\\apis\\dinnerreservationsapi\\ddd\\applicationlayer\\services\\authentication\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{159CF1A1-6AE9-4863-803B-A1C1B1F5D818}|ApplicationLayer\\ApplicationLayer.csproj|solutionrelative:applicationlayer\\services\\authentication\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60DA6587-6A48-4DF7-BECE-58BC0D0A51C3}|InfrastructureLayer\\InfrastructureLayer.csproj|c:\\users\\sphinx\\documents\\my projects\\apis\\dinnerreservationsapi\\ddd\\infrastructurelayer\\implementations\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60DA6587-6A48-4DF7-BECE-58BC0D0A51C3}|InfrastructureLayer\\InfrastructureLayer.csproj|solutionrelative:infrastructurelayer\\implementations\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{159CF1A1-6AE9-4863-803B-A1C1B1F5D818}|ApplicationLayer\\ApplicationLayer.csproj|c:\\users\\sphinx\\documents\\my projects\\apis\\dinnerreservationsapi\\ddd\\applicationlayer\\common\\interfaces\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{159CF1A1-6AE9-4863-803B-A1C1B1F5D818}|ApplicationLayer\\ApplicationLayer.csproj|solutionrelative:applicationlayer\\common\\interfaces\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,34 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\InfrastructureLayer\\Implementations\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "InfrastructureLayer\\Implementations\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\InfrastructureLayer\\Implementations\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "InfrastructureLayer\\Implementations\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T23:07:40.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\ApplicationLayer\\Common\\Interfaces\\Repositories\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "ApplicationLayer\\Common\\Interfaces\\Repositories\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\ApplicationLayer\\Common\\Interfaces\\Repositories\\IUserRepository.cs",
-              "RelativeToolTip": "ApplicationLayer\\Common\\Interfaces\\Repositories\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T22:56:23.195Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -61,19 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:119168537:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\ApplicationLayer\\Services\\Authentication\\AuthService.cs",
-              "RelativeDocumentMoniker": "ApplicationLayer\\Services\\Authentication\\AuthService.cs",
-              "ToolTip": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\ApplicationLayer\\Services\\Authentication\\AuthService.cs",
-              "RelativeToolTip": "ApplicationLayer\\Services\\Authentication\\AuthService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T21:25:20.289Z",
-              "EditorCaption": ""
             }
           ]
         }

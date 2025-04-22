@@ -22,7 +22,6 @@ C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\Presentatio
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.AssemblyInfoInputs.cache
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.AssemblyInfo.cs
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.csproj.CoreCompileInputs.cache
-C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.sourcelink.json
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\staticwebassets.build.json
@@ -46,3 +45,5 @@ C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\Presentatio
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\FluentResults.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.MvcApplicationPartsAssemblyInfo.cs

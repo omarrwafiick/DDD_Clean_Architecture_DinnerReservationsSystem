@@ -1,11 +1,11 @@
-﻿using ApplicationLayer.Common.Interfaces.Authentication;
+﻿using ApplicationLayer.Common.Interfaces.JwtToken;
 using ApplicationLayer.Common.Interfaces.Repositories;
 using ApplicationLayer.Common.Services;
-using InfrastructureLayer.Implementations;
+using InfrastructureLayer.Implementations.JwtToken;
 using InfrastructureLayer.Implementations.Repositories;
-using InfrastructureLayer.Services; 
+using InfrastructureLayer.Services;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;  
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ApplicationLayer.DependencyInjection
 {

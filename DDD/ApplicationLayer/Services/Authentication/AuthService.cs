@@ -1,6 +1,8 @@
-﻿using ApplicationLayer.Common.Interfaces.Authentication;
+﻿using ApplicationLayer.Common.Errors; 
+using ApplicationLayer.Common.Interfaces.JwtToken;
 using ApplicationLayer.Common.Interfaces.Repositories;
 using DomainLayer.Entities;
+using FluentResults;
 
 namespace ApplicationLayer.Services.Authentication
 {
@@ -14,18 +16,37 @@ namespace ApplicationLayer.Services.Authentication
             _userRepository = userRepository;
         }
 
-        public AuthResult? Login(string email, string password)
+        public Result<AuthResult> Login(string email, string password)
         {
             var user = _userRepository.GetUserByEmail(email);
-            if (user is null) return null;    
-            if(user.Password != password) return null;
+            if (user is null)
+            {
+                return Result.Fail<AuthResult>(
+                new[] { new UserNotFoundError() {
+                    Message ="Incorrect email"
+                }});
+            }
+            if (user.Password != password)
+            {
+                return Result.Fail<AuthResult>(
+                new[] { new UserNotFoundError() {
+                    Message ="Incorrect password"
+                }});
+            }
             var token = _tokenGenrator.GenerateToken(user);
             return new AuthResult(user, token);
         }
-
-        public AuthResult? Register(string firstName, string lastName, string email, string password)
+        
+        public Result<AuthResult> Register(string firstName, string lastName, string email, string password)
         {
-            if (_userRepository.GetUserByEmail(email) is not null) return null;
+            if (_userRepository.GetUserByEmail(email) is not null)
+            {
+                return Result.Fail<AuthResult>(
+                new[] { new DuplicateEmailError() {
+                    Message ="User was not found"
+                }});
+            }
+
             Guid userid = Guid.NewGuid();
             var user = new User
             {
