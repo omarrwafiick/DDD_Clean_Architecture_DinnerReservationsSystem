@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Services.Authentication;
+﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ApplicationLayer.DependencyInjection
@@ -7,7 +7,7 @@ namespace ApplicationLayer.DependencyInjection
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthService, AuthService>();
+            services.AddMediatR(typeof(DependencyInjection).Assembly);
             return services;
         }
     }

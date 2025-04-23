@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Services.Authentication;
+﻿using ApplicationLayer.Services.Authentication.Common;
 using Contracts.Authentication;
 
 namespace PresentationLayer.Utilities
