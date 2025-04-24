@@ -1,14 +1,14 @@
 using ApplicationLayer.DependencyInjection;
- 
+using PresentationLayer.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribute>());
-
-builder.Services.AddControllers();
-
+  
 builder.Services
     .AddApplication()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure(builder.Configuration)
+    .AddPresentation();
 
 var app = builder.Build(); 
 

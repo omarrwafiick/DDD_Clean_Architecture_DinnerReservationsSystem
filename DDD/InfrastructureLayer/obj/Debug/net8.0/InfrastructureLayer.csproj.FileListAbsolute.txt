@@ -16,3 +16,5 @@ C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\Infrastruct
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\InfrastructureLayer\obj\Debug\net8.0\refint\InfrastructureLayer.dll
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\InfrastructureLayer\obj\Debug\net8.0\InfrastructureLayer.pdb
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\InfrastructureLayer\obj\Debug\net8.0\ref\InfrastructureLayer.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\InfrastructureLayer\bin\Debug\net8.0\Contracts.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\InfrastructureLayer\bin\Debug\net8.0\Contracts.pdb

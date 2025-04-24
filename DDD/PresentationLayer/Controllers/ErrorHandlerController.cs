@@ -7,7 +7,7 @@ namespace PresentationLayer.Controllers
     public class ErrorHandlerController : ControllerBase
     {
         public IActionResult Problem(List<IError> errors)
-        {
+        {  
             var messages = errors.Select(e => e.Message).ToList();
              
             var problemDetails = new ProblemDetails

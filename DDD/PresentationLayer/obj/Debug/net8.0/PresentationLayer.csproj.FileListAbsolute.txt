@@ -47,3 +47,12 @@ C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\Presentatio
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\FluentResults.dll
 C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\obj\Debug\net8.0\PresentationLayer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\Mapster.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\Mapster.Core.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\Mapster.DependencyInjection.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\MediatR.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\sphinx\Documents\My Projects\Apis\DinnerReservationsApi\DDD\PresentationLayer\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
