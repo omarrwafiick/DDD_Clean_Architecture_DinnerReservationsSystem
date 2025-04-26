@@ -1,6 +1,6 @@
 ﻿using ApplicationLayer.Common.Interfaces.JwtToken;
 using ApplicationLayer.Common.Services;
-using DomainLayer.Entities;
+using DomainLayer.User;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

@@ -1,5 +1,5 @@
 ﻿
-using DomainLayer.Entities;
+using DomainLayer.User;
 
 namespace ApplicationLayer.Common.Interfaces.Repositories
 {

@@ -32,4 +32,9 @@ app.UseExceptionHandler("/error");
 
 app.MapControllers();
 
+app.UseAuthentication();
+
+app.UseAuthorization();
+
 app.Run();
+ 

@@ -1,4 +1,6 @@
-﻿using DomainLayer.Entities;
+﻿
+
+using DomainLayer.User;
 
 namespace ApplicationLayer.Services.Authentication.Common
 {
