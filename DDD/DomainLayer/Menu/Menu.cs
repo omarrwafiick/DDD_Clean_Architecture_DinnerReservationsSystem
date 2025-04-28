@@ -9,10 +9,11 @@ using DomainLayer.MenuReview.ValueObjects;
 namespace DomainLayer.Menu
 {
     public sealed class Menu : AggregateRoot<MenuId>
+    //menuId → passed to AggregateRoot → passed to Entity → stored in Id property.
     {
         private readonly List<MenuSection> _sections = new();
         private readonly List<DinnerId> _dinners = new();
-        private readonly List<MenuReviewId> _reviews= new ();
+        private readonly List<MenuReviewId> _reviews = new ();
 
         public string Name { get; }
         public string Description { get; }

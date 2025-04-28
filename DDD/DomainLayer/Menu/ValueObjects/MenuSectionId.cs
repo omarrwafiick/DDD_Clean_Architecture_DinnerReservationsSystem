@@ -6,7 +6,7 @@ namespace DomainLayer.Menu.ValueObjects
     public class MenuSectionId : ValueObject
     {
         public Guid Value { get; }
-        public MenuSectionId(Guid value)
+        private MenuSectionId(Guid value)
         {
             Value = value;
         }

@@ -1,0 +1,34 @@
+﻿using DomainLayer.Bill.ValueObjects;
+using DomainLayer.Common.BaseClasses;
+using DomainLayer.Common.ValueObjects;
+using DomainLayer.Dinner.ValueObjects;
+using DomainLayer.Guest.ValueObjects;
+using DomainLayer.Host.ValueObjects;  
+
+namespace DomainLayer.Bill
+{
+    public sealed class Bill : AggregateRoot<BillId>
+    {
+        public DinnerId DinnerId { get; }
+        public GuestId GuestId { get; }
+        public HostId HostId { get; }
+        public Price Price { get; }  
+        public DateTime CreatedAt { get; }
+        public DateTime UpdatedAt { get; }
+         
+        private Bill(BillId billId, DinnerId dinnerId, GuestId guestId, HostId hostId, Price price, DateTime createdAt, DateTime updatedAt) :base(billId)
+        {
+            DinnerId = dinnerId;
+            GuestId = guestId;
+            Price = price;
+            HostId = hostId;
+            CreatedAt = createdAt;
+            UpdatedAt = updatedAt;
+        }
+
+        public static Bill Create(string name, DinnerId dinnerId, GuestId guestId, HostId hostId, Price price)
+        {
+            return new Bill(BillId.Create(), dinnerId, guestId, hostId, price, DateTime.UtcNow, DateTime.UtcNow);
+        } 
+    }
+}
