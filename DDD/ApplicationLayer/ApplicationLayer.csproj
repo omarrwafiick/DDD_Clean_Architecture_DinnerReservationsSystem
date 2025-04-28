@@ -21,4 +21,8 @@
     <ProjectReference Include="..\DomainLayer\DomainLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Menus\Queries\" />
+  </ItemGroup>
+
 </Project>

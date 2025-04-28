@@ -8,7 +8,6 @@ namespace PresentationLayer.Controllers
     [ApiController]
     [Authorize]
     public class DinnersController : ControllerBase
-    {
-        public IActionResult GetDinners() => Ok(Array.Empty<string>());
+    { 
     }
 }

@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CED46C1-F7C7-465B-8599-AB67834D6727}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\sphinx\\documents\\my projects\\apis\\dinnerreservationsapi\\ddd\\presentationlayer\\common\\mapping\\menumappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CED46C1-F7C7-465B-8599-AB67834D6727}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\common\\mapping\\menumappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CED46C1-F7C7-465B-8599-AB67834D6727}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\sphinx\\documents\\my projects\\apis\\dinnerreservationsapi\\ddd\\presentationlayer\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CED46C1-F7C7-465B-8599-AB67834D6727}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +31,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:119168537:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuMappingConfig.cs",
+              "DocumentMoniker": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\PresentationLayer\\Common\\Mapping\\MenuMappingConfig.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\Common\\Mapping\\MenuMappingConfig.cs",
+              "ToolTip": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\PresentationLayer\\Common\\Mapping\\MenuMappingConfig.cs",
+              "RelativeToolTip": "PresentationLayer\\Common\\Mapping\\MenuMappingConfig.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBUAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T16:04:32.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenusController.cs",
+              "DocumentMoniker": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\PresentationLayer\\Controllers\\MenusController.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\Controllers\\MenusController.cs",
+              "ToolTip": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\PresentationLayer\\Controllers\\MenusController.cs",
+              "RelativeToolTip": "PresentationLayer\\Controllers\\MenusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T14:45:11.857Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -19,7 +19,8 @@ namespace ApplicationLayer.DependencyInjection
         {
             services.AddAuthenticationCustome(config);
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IMenuRepository, MenuRepository>(); 
             return services;
         }
 

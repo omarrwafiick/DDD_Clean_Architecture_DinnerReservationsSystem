@@ -1,5 +1,5 @@
 ﻿
-using DomainLayer.User;
+using DomainLayer.UserAggregate;
 
 namespace ApplicationLayer.Common.Interfaces.Repositories
 {

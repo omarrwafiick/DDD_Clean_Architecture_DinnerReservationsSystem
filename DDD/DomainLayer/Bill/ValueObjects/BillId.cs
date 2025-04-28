@@ -1,7 +1,7 @@
 ﻿ 
 using DomainLayer.Common.BaseClasses; 
 
-namespace DomainLayer.Bill.ValueObjects
+namespace DomainLayer.BillAggregate.ValueObjects
 {
     public class BillId : ValueObject
     {

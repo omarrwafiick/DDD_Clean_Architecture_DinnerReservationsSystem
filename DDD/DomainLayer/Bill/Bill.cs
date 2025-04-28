@@ -1,11 +1,11 @@
-﻿using DomainLayer.Bill.ValueObjects;
+﻿using DomainLayer.BillAggregate.ValueObjects;
 using DomainLayer.Common.BaseClasses;
 using DomainLayer.Common.ValueObjects;
-using DomainLayer.Dinner.ValueObjects;
-using DomainLayer.Guest.ValueObjects;
-using DomainLayer.Host.ValueObjects;  
+using DomainLayer.DinnerAggregate.ValueObjects;
+using DomainLayer.GuestAggregate.ValueObjects;
+using DomainLayer.HostAggregate.ValueObjects;  
 
-namespace DomainLayer.Bill
+namespace DomainLayer.BillAggregate
 {
     public sealed class Bill : AggregateRoot<BillId>
     {

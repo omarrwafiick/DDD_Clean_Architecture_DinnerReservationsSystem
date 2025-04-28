@@ -1,6 +1,6 @@
 ﻿
 
-using DomainLayer.User;
+using DomainLayer.UserAggregate;
 
 namespace ApplicationLayer.Services.Authentication.Common
 {

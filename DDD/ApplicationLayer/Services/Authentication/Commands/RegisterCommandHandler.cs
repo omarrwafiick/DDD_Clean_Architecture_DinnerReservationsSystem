@@ -2,7 +2,7 @@
 using ApplicationLayer.Common.Interfaces.JwtToken;
 using ApplicationLayer.Common.Interfaces.Repositories;
 using ApplicationLayer.Services.Authentication.Common;
-using DomainLayer.User;
+using DomainLayer.UserAggregate;
 using FluentResults;
 using MediatR;
 
