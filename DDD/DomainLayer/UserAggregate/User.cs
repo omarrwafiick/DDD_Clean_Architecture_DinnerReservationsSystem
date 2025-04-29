@@ -5,6 +5,7 @@ namespace DomainLayer.UserAggregate
 {
     public sealed class User : Entity<UserId>
     {
+        public User() { }
         private User(UserId userId, string firstName, string lastName, string email, string password, DateTime createdAt, DateTime updatedAt) : base(userId)
         { 
             FirstName = firstName;
@@ -15,12 +16,12 @@ namespace DomainLayer.UserAggregate
             UpdatedAt = updatedAt;
         }
 
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Email { get; }
-        public string Password { get; }
-        public DateTime CreatedAt { get; }
-        public DateTime UpdatedAt { get; }
+        public string FirstName { get; private set;}
+        public string LastName { get; private set;}
+        public string Email { get; private set;}
+        public string Password { get; private set;}
+        public DateTime CreatedAt { get; private set;}
+        public DateTime UpdatedAt { get; private set;}
 
 
         public static User Create(string firstName, string lastName, string email, string password)

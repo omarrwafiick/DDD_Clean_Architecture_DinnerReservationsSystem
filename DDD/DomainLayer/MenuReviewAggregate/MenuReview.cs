@@ -8,15 +8,16 @@ using DomainLayer.MenuReviewAggregate.ValueObjects;
 namespace DomainLayer.MenuReviewAggregate
 { 
     public sealed class MenuReview : AggregateRoot<MenuReviewId>
-    { 
-        public int Rating { get; }
-        public string Comment { get; }
-        public HostId HostId { get; }
-        public MenuId MenuId { get; }
-        public GuestId GuestId { get; }
-        public DinnerId DinnerId { get; } 
-        public DateTime CreatedAt { get; }
-        public DateTime UpdatedAt { get; }
+    {
+        public MenuReview() { }
+        public int Rating { get; private set;}
+        public string Comment { get; private set;}
+        public HostId HostId { get; private set;}
+        public MenuId MenuId { get; private set;}
+        public GuestId GuestId { get; private set;}
+        public DinnerId DinnerId { get; private set;} 
+        public DateTime CreatedAt { get; private set;}
+        public DateTime UpdatedAt { get; private set;}
  
         private MenuReview(MenuReviewId menuReviewId, int rating, string comment, HostId hostId,
                            MenuId menuId, GuestId guestId, DinnerId dinnerId, DateTime createdAt,

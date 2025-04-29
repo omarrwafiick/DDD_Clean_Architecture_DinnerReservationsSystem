@@ -8,12 +8,13 @@ using DomainLayer.UserAggregate.ValueObjects;
 namespace DomainLayer.HostAggregate
 {
     public sealed class Host : AggregateRoot<HostId>
-    { 
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string ProfileImage { get; }
-        public decimal AverageRating { get; }
-        public UserId UserId { get; }
+    {
+        public Host() { }
+        public string FirstName { get; private set;}
+        public string LastName { get; private set;}
+        public string ProfileImage { get; private set;}
+        public decimal AverageRating { get; private set;}
+        public UserId UserId { get; private set;}
  
         private readonly List<MenuId> _menuIds = new();
         private readonly List<DinnerId> _dinnerIds = new();
@@ -21,8 +22,8 @@ namespace DomainLayer.HostAggregate
         public IReadOnlyList<MenuId> MenuIds => _menuIds.AsReadOnly();
         public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
          
-        public DateTime CreatedDateTime { get; }
-        public DateTime UpdatedDateTime { get; }
+        public DateTime CreatedDateTime { get; private set;}
+        public DateTime UpdatedDateTime { get; private set;}
          
         private Host(HostId hostId, string firstName, string lastName, string profileImage, decimal averageRating,
                       UserId userId, DateTime createdDateTime, DateTime updatedDateTime)

@@ -1,16 +1,17 @@
 ﻿
 using DomainLayer.Common.BaseClasses;
+using DomainLayer.GuestAggregate.ValueObjects;
 
 namespace DomainLayer.MenuAggregate.ValueObjects
 {
     public class MenuId : ValueObject
     {
-        public Guid Value { get; }
+        public Guid Value { get; private set;}
         private MenuId(Guid value)
         {
             Value = value;
         }
-
+        public static MenuId Create(Guid value) => new MenuId(value);
         public static MenuId Create() => new MenuId(Guid.NewGuid());
         public override IEnumerable<object> GetEqualityComponents()
         {

@@ -4,7 +4,8 @@ namespace DomainLayer.Common.BaseClasses
 {
     public abstract class Entity<TID> : IEquatable<Entity<TID>> where TID : notnull
     {
-        public TID Id { get; protected set; }
+        protected Entity() { }
+        public TID Id { get; private set; }
         protected Entity(TID id) {
             Id = id;
         }

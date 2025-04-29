@@ -5,10 +5,12 @@ namespace DomainLayer.MenuAggregate.Entities
 {
     public sealed class MenuSection : Entity<MenuSectionId>
     {
-        public string Name { get; }
-        public string Description { get; }
+        public MenuSection() { } 
+
+        public string Name { get; private set;}
+        public string Description { get; private set;}
         private readonly List<MenuItem> _menuItems = new();
-        private IReadOnlyCollection<MenuItem> MenuItems => _menuItems.AsReadOnly();
+        public IReadOnlyCollection<MenuItem> MenuItems => _menuItems.AsReadOnly();
         private MenuSection(MenuSectionId id, string name, string description, List<MenuItem> items) : base(id) 
         {
             Name = name;

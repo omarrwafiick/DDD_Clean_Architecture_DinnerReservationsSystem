@@ -9,12 +9,12 @@ namespace DomainLayer.BillAggregate
 {
     public sealed class Bill : AggregateRoot<BillId>
     {
-        public DinnerId DinnerId { get; }
-        public GuestId GuestId { get; }
-        public HostId HostId { get; }
-        public Price Price { get; }  
-        public DateTime CreatedAt { get; }
-        public DateTime UpdatedAt { get; }
+        public DinnerId DinnerId { get; private set;}
+        public GuestId GuestId { get; private set;}
+        public HostId HostId { get; private set;}
+        public Price Price { get; private set;}  
+        public DateTime CreatedAt { get; private set;}
+        public DateTime UpdatedAt { get; private set;}
          
         private Bill(BillId billId, DinnerId dinnerId, GuestId guestId, HostId hostId, Price price, DateTime createdAt, DateTime updatedAt) :base(billId)
         {
@@ -26,6 +26,10 @@ namespace DomainLayer.BillAggregate
             UpdatedAt = updatedAt;
         }
 
+        private Bill()
+        {
+            
+        }
         public static Bill Create(string name, DinnerId dinnerId, GuestId guestId, HostId hostId, Price price)
         {
             return new Bill(BillId.Create(), dinnerId, guestId, hostId, price, DateTime.UtcNow, DateTime.UtcNow);

@@ -27,7 +27,7 @@ namespace ApplicationLayer.Services.Menus.Commands
                         )
                     ).ToList()
                 );
-            _menuRepository.Add(menu);
+            await _menuRepository.AddAsync(menu);
             return menu;
         }
     }

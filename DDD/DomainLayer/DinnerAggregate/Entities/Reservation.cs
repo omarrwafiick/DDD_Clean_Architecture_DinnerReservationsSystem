@@ -8,7 +8,7 @@ namespace DomainLayer.DinnerAggregate.Entities
 {
     public class Reservation : Entity<ReservationId>
     {
-        public Reservation(
+        private Reservation(
             ReservationId id, int guestCount, ReservationStatus reservationStatus, GuestId guestId, BillId billId,
             DateTime arrivalDateTime, DateTime createdAt, DateTime updatedAt
         ) : base(id)
@@ -21,13 +21,15 @@ namespace DomainLayer.DinnerAggregate.Entities
             UpdatedAt = updatedAt;
             ArrivalDateTime = arrivalDateTime;
         }
-        public int GuestCount { get; }
-        public ReservationStatus ReservationStatus { get; }
-        public GuestId GuestId { get; }
-        public BillId BillId { get; }
-        public DateTime ArrivalDateTime { get; }
-        public DateTime CreatedAt { get; }
-        public DateTime UpdatedAt { get; }
+
+        private Reservation() {  }
+        public int GuestCount { get; private set;}
+        public ReservationStatus ReservationStatus { get; private set;}
+        public GuestId GuestId { get; private set;}
+        public BillId BillId { get; private set;}
+        public DateTime ArrivalDateTime { get; private set;}
+        public DateTime CreatedAt { get; private set;}
+        public DateTime UpdatedAt { get; private set;}
         public static Reservation Create(int guestCount, ReservationStatus reservationStatus, GuestId guestId, BillId billId)
         {
             return new Reservation(ReservationId.Create(), guestCount, reservationStatus, guestId, billId, DateTime.UtcNow, DateTime.UtcNow, DateTime.UtcNow);

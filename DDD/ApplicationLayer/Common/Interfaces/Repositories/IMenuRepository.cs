@@ -6,6 +6,6 @@ namespace ApplicationLayer.Common.Interfaces.Repositories
 {
     public interface IMenuRepository
     {
-        void Add(Menu menu);
+        Task AddAsync(Menu menu);
     }
 }

@@ -10,21 +10,23 @@ namespace DomainLayer.DinnerAggregate
 {
     public sealed class Dinner : AggregateRoot<DinnerId>
     {
-        public string Name { get; }
-        public string Description { get; }
-        public DinnerStatus DinnerStatus { get; }
-        public Price Price { get; }
-        public bool IsPublic { get; }
-        public int MaxGuests { get; }
-        public HostId HostId { get; }
-        public MenuId MenuId { get; }
-        public string ImageUrl { get; }
-        public Location Location { get; }
+        private Dinner() { }
+         
+        public string Name { get; private set;}
+        public string Description { get; private set;}
+        public DinnerStatus DinnerStatus { get; private set;}
+        public Price Price { get; private set;}
+        public bool IsPublic { get; private set;}
+        public int MaxGuests { get; private set;}
+        public HostId HostId { get; private set;}
+        public MenuId MenuId { get; private set;}
+        public string ImageUrl { get; private set;}
+        public Location Location { get; private set;}
         private readonly List<Reservation> _reservations = new();
-        public DateTime StartedAt { get; }
-        public DateTime EndedAt { get; }
-        public DateTime CreatedAt { get; }
-        public DateTime UpdatedAt { get; }
+        public DateTime StartedAt { get; private set;}
+        public DateTime EndedAt { get; private set;}
+        public DateTime CreatedAt { get; private set;}
+        public DateTime UpdatedAt { get; private set;}
         public IReadOnlyList<Reservation> Reservations => _reservations.AsReadOnly();
 
         private Dinner(

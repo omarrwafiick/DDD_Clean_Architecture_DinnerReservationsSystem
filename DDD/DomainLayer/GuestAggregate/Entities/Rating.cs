@@ -6,12 +6,14 @@ using DomainLayer.HostAggregate.ValueObjects;
 namespace DomainLayer.GuestAggregate.Entities
 {
     public class Rating : Entity<RatingId>
-    {   
-        public HostId HostId { get; }
-        public DinnerId DinnerId { get; }
-        public int RatingValue { get; }  
-        public DateTime CreatedDateTime { get; }
-        public DateTime UpdatedDateTime { get; }
+    {
+        public Rating() { }
+    
+        public HostId HostId { get; private set;}
+        public DinnerId DinnerId { get; private set;}
+        public int RatingValue { get; private set;}  
+        public DateTime CreatedDateTime { get; private set;}
+        public DateTime UpdatedDateTime { get; private set;}
          
         private Rating(
             RatingId ratingId,
