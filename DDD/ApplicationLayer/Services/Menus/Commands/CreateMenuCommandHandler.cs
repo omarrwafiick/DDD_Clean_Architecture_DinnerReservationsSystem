@@ -19,7 +19,7 @@ namespace ApplicationLayer.Services.Menus.Commands
             var menu = Menu.Create(
                 request.Name,
                 request.Description,
-                HostId.Create(request.HostId),
+                HostId.Create(Guid.Parse( request.HostId)),
                 request.Sections.Select(
                         sec => MenuSection.Create(sec.Name, sec.Description, sec.Items.Select(
                                 itm => MenuItem.Create(itm.Name, itm.Description)

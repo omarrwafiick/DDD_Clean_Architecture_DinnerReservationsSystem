@@ -5,6 +5,7 @@ namespace DomainLayer.Common.ValueObjects
 {
     public sealed class Rating : ValueObject
     {
+        private Rating() { }
         private Rating(double value)
         {
             Value = value; 

@@ -5,7 +5,7 @@ namespace DomainLayer.UserAggregate
 {
     public sealed class User : Entity<UserId>
     {
-        public User() { }
+        private User() { }
         private User(UserId userId, string firstName, string lastName, string email, string password, DateTime createdAt, DateTime updatedAt) : base(userId)
         { 
             FirstName = firstName;

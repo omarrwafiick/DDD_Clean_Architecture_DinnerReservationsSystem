@@ -4,6 +4,7 @@ namespace DomainLayer.Common.ValueObjects
 { 
     public class Price : ValueObject
     {
+        private Price() { }
         public decimal Amount { get; private set; }
         public string Currency { get; private set; }
 

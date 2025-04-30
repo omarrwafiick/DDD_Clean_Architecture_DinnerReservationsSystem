@@ -5,6 +5,7 @@ namespace DomainLayer.BillAggregate.ValueObjects
 {
     public class BillId : ValueObject
     {
+        private BillId() { }
         public Guid Value { get; private set;}
         private BillId(Guid value)
         {

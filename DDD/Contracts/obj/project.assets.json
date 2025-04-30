@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\Rest\\DinnerReservationsApi\\DDD\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\Contracts\\Contracts.csproj",
+      "projectPath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\Rest\\DinnerReservationsApi\\DDD\\Contracts\\Contracts.csproj",
       "packagesPath": "C:\\Users\\sphinx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\Contracts\\obj\\",
+      "outputPath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\Rest\\DinnerReservationsApi\\DDD\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,11 +1,11 @@
 ﻿
-using DomainLayer.Common.BaseClasses;
-using DomainLayer.DinnerAggregate.ValueObjects;
+using DomainLayer.Common.BaseClasses; 
 
 namespace DomainLayer.GuestAggregate.ValueObjects
 {
     public class GuestId : ValueObject
     {
+        private GuestId() { }
         public Guid Value { get; private set;}
         private GuestId(Guid value)
         {

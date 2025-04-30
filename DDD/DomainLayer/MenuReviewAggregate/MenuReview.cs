@@ -9,7 +9,7 @@ namespace DomainLayer.MenuReviewAggregate
 { 
     public sealed class MenuReview : AggregateRoot<MenuReviewId>
     {
-        public MenuReview() { }
+        private MenuReview() { }
         public int Rating { get; private set;}
         public string Comment { get; private set;}
         public HostId HostId { get; private set;}
@@ -39,7 +39,7 @@ namespace DomainLayer.MenuReviewAggregate
         { 
             var currentTime = DateTime.UtcNow;
 
-            return new MenuReview(MenuReviewId.Create(), rating, comment, hostId, menuId, guestId, dinnerId, currentTime, currentTime);
+            return new MenuReview(MenuReviewId.Create(Guid.NewGuid()), rating, comment, hostId, menuId, guestId, dinnerId, currentTime, currentTime);
         }
     }
 }

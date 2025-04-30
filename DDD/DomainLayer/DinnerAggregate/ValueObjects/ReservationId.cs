@@ -5,6 +5,7 @@ namespace DomainLayer.DinnerAggregate.ValueObjects
 {
     public class ReservationId : ValueObject
     {
+        private ReservationId() { }
         public Guid Value { get; private set;}
         private ReservationId(Guid value)
         {

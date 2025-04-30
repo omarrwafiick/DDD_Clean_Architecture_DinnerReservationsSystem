@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Eyh7UHzs+0=",
+  "dgSpecHash": "rCUtQo4V2yE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\PresentationLayer\\PresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\Rest\\DinnerReservationsApi\\DDD\\PresentationLayer\\PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sphinx\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\sphinx\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

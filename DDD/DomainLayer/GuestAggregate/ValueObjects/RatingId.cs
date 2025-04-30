@@ -4,6 +4,7 @@ namespace DomainLayer.GuestAggregate.ValueObjects
 {
     public class RatingId : ValueObject
     {
+        private RatingId() { }
         public Guid Value { get; private set;}
         private RatingId(Guid value)
         {

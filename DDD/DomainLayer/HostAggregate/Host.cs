@@ -1,15 +1,15 @@
 ﻿ 
 using DomainLayer.Common.BaseClasses;
-using DomainLayer.DinnerAggregate.ValueObjects;
+using DomainLayer.DinnerAggregate.ValueObjects; 
 using DomainLayer.HostAggregate.ValueObjects;
 using DomainLayer.MenuAggregate.ValueObjects;
 using DomainLayer.UserAggregate.ValueObjects;
 
 namespace DomainLayer.HostAggregate
-{
+{ 
     public sealed class Host : AggregateRoot<HostId>
-    {
-        public Host() { }
+    { 
+        private Host() { }
         public string FirstName { get; private set;}
         public string LastName { get; private set;}
         public string ProfileImage { get; private set;}
@@ -43,16 +43,6 @@ namespace DomainLayer.HostAggregate
         { 
             var currentTime = DateTime.UtcNow; 
             return new Host(HostId.Create(), firstName, lastName, profileImage, averageRating, userId, currentTime, currentTime);
-        }
-         
-        //public void AddMenuId(MenuId menuId)
-        //{
-        //    _menuIds.Add(menuId);
-        //}
-
-        //public void AddDinnerId(DinnerId dinnerId)
-        //{
-        //    _dinnerIds.Add(dinnerId);
-        //}
+        } 
     }
 }

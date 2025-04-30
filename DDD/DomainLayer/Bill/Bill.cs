@@ -8,7 +8,8 @@ using DomainLayer.HostAggregate.ValueObjects;
 namespace DomainLayer.BillAggregate
 {
     public sealed class Bill : AggregateRoot<BillId>
-    {
+    { 
+        private Bill() { }
         public DinnerId DinnerId { get; private set;}
         public GuestId GuestId { get; private set;}
         public HostId HostId { get; private set;}
@@ -24,11 +25,6 @@ namespace DomainLayer.BillAggregate
             HostId = hostId;
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
-        }
-
-        private Bill()
-        {
-            
         }
         public static Bill Create(string name, DinnerId dinnerId, GuestId guestId, HostId hostId, Price price)
         {

@@ -6,6 +6,7 @@ namespace DomainLayer.UserAggregate.ValueObjects
 {
     public class UserId : ValueObject
     {
+        private UserId() { }
         public Guid Value { get; private set;}
         private UserId(Guid value)
         {

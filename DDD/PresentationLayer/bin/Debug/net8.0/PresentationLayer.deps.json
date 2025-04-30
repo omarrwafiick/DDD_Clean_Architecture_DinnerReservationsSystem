@@ -1100,7 +1100,9 @@
       },
       "DomainLayer/1.0.0": {
         "dependencies": {
-          "FluentResults": "3.16.0"
+          "FluentResults": "3.16.0",
+          "MediatR": "11.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.11"
         },
         "runtime": {
           "DomainLayer.dll": {

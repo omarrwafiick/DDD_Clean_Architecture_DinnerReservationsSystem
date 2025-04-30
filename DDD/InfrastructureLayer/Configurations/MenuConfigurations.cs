@@ -12,15 +12,15 @@ namespace InfrastructureLayer.Configurations
         {
             ConfigMenuTable(builder);
             ConfigMenuEntitiesTable(builder);
-            ConfigMenuDinnerIdsTable(builder);
             ConfigMenuReviewsIdsTable(builder);
+            ConfigMenuDinnerIdsTable(builder);
         }
 
         private void ConfigMenuTable(EntityTypeBuilder<Menu> builder)
         {
             builder.ToTable("Menus");
 
-            builder.HasKey(nameof(Menu.Id));
+            builder.HasKey("Id");
 
             builder.Property(p => p.Id) 
                 .HasConversion(id => id.Value, value => MenuId.Create(value));
@@ -46,13 +46,15 @@ namespace InfrastructureLayer.Configurations
                 ms.WithOwner().HasForeignKey("MenuId");
 
                 ms.HasKey("Id", "MenuId");
-                ms.Property(p => p.Id)
-                   
-                    .HasColumnName("MenuSectionId")
-                    .HasConversion(id => id.Value, value => MenuSectionId.Create(value));
+
+                ms.Property(p => p.Id) 
+                    .HasConversion(
+                        id => id.Value, 
+                        value => MenuSectionId.Create(value)) 
+                    .HasColumnName("MenuSectionId"); 
 
                 ms.Property(p => p.Name)
-                .HasMaxLength(100);
+                    .HasMaxLength(100);
 
                 ms.Property(p => p.Description)
                     .HasMaxLength(100);
@@ -63,61 +65,63 @@ namespace InfrastructureLayer.Configurations
 
                     mi.WithOwner().HasForeignKey("MenuSectionId", "MenuId");
 
-                    ms.HasKey("Id", "MenuSectionId", "MenuId");
+                    mi.HasKey("Id", "MenuSectionId", "MenuId");
 
-                    mi.Property(p => p.Id)
-                       
-                        .HasColumnName("MenuItemId")
-                        .HasConversion(id => id.Value, value => MenuItemId.Create(value));
+                    mi.Property(p => p.Id) 
+                        .HasConversion(id => id.Value, value => MenuItemId.Create(value)) 
+                        .HasColumnName("MenuItemId");
+
                     mi.Property(p => p.Name)
                         .HasMaxLength(100);
 
                     mi.Property(p => p.Description)
                         .HasMaxLength(100);
                 });
+
                 ms.Navigation(i => i.MenuItems).Metadata.SetField("_menuItems");
                 ms.Navigation(i => i.MenuItems).UsePropertyAccessMode(PropertyAccessMode.Field);
             });
+
             builder.Metadata.FindNavigation(nameof(Menu.MenuSections))!
                 .SetPropertyAccessMode(PropertyAccessMode.Field);
         }
 
         private void ConfigMenuReviewsIdsTable(EntityTypeBuilder<Menu> builder)
         {
-            builder.OwnsMany(o => o.DinnerIds, di =>
-            {
-                di.ToTable("MenuDinnerIds");
-
-                di.WithOwner("MenuId");
-
-                di.HasKey("Id");
-
-                di.Property(p => p.Value)
-                   
-                    .HasColumnName("DinnerId");
-            });
-
-            builder.Metadata.FindNavigation(nameof(Menu.DinnerIds))!
-                .SetPropertyAccessMode(PropertyAccessMode.Field);
-        }
-
-        private void ConfigMenuDinnerIdsTable(EntityTypeBuilder<Menu> builder)
-        { 
             builder.OwnsMany(o => o.MenuReviewIds, mr =>
             {
                 mr.ToTable("MenuReviewIds");
 
-                mr.WithOwner("MenuId");
+                mr.WithOwner().HasForeignKey("MenuId");
 
                 mr.HasKey("Id");
 
-                mr.Property(p => p.Value)
-                   
+                mr.Property(p => p.Value)  
                     .HasColumnName("MenuReviewId");
             });
 
             builder.Metadata.FindNavigation(nameof(Menu.MenuReviewIds))!
-                .SetPropertyAccessMode(PropertyAccessMode.Field);
+                .SetPropertyAccessMode(PropertyAccessMode.Field);  
+
+        }
+
+        private void ConfigMenuDinnerIdsTable(EntityTypeBuilder<Menu> builder)
+        { 
+            builder.OwnsMany(o => o.DinnerIds, di =>
+            {
+                di.ToTable("MenuDinnerIds");
+
+                di.WithOwner().HasForeignKey("MenuId");
+
+                di.HasKey("Id");
+
+                di.Property(p => p.Value) 
+                    .HasColumnName("DinnerId");
+            });
+
+            builder.Metadata.FindNavigation(nameof(Menu.DinnerIds))!
+                .SetPropertyAccessMode(PropertyAccessMode.Field); 
+
         }
     }
 }

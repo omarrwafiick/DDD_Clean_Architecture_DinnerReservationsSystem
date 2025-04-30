@@ -7,7 +7,7 @@ namespace DomainLayer.GuestAggregate.Entities
 {
     public class Rating : Entity<RatingId>
     {
-        public Rating() { }
+        private Rating() { } 
     
         public HostId HostId { get; private set;}
         public DinnerId DinnerId { get; private set;}

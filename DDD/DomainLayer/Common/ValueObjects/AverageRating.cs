@@ -5,6 +5,7 @@ namespace DomainLayer.Common.ValueObjects
 {
     public sealed class AverageRating : ValueObject
     {
+        private AverageRating() { }
         private AverageRating(double value, int numRatings)
         {
             Value = value;

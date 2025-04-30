@@ -5,8 +5,7 @@ namespace DomainLayer.MenuAggregate.Entities
 {
     public sealed class MenuSection : Entity<MenuSectionId>
     {
-        public MenuSection() { } 
-
+        private MenuSection() { }  
         public string Name { get; private set;}
         public string Description { get; private set;}
         private readonly List<MenuItem> _menuItems = new();
@@ -17,6 +16,6 @@ namespace DomainLayer.MenuAggregate.Entities
             Description = description;
             _menuItems = items;
         }
-        public static MenuSection Create(string name, string description, List<MenuItem> items) => new MenuSection(MenuSectionId.Create(), name, description, items);
+        public static MenuSection Create(string name, string description, List<MenuItem> items) => new MenuSection(MenuSectionId.Create(Guid.NewGuid()), name, description, items);
     }
 }

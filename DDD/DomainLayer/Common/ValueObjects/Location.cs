@@ -6,6 +6,7 @@ namespace DomainLayer.Common.ValueObjects
 {
     public class Location : ValueObject
     {
+        private Location() { } 
         private Location(string name, string address, double latitude , double longitude )
         { 
             Name = name;

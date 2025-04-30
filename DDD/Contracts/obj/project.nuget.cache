@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I40ZwPEZurg=",
+  "dgSpecHash": "ec+e8M97lUU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\DinnerReservationsApi\\DDD\\Contracts\\Contracts.csproj",
+  "projectFilePath": "C:\\Users\\sphinx\\Documents\\My Projects\\Apis\\Rest\\DinnerReservationsApi\\DDD\\Contracts\\Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

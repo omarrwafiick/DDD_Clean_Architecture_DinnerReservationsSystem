@@ -3,6 +3,7 @@ using ApplicationLayer.Common.Interfaces.Repositories;
 using ApplicationLayer.Common.Services;
 using InfrastructureLayer.Data;
 using InfrastructureLayer.Implementations.JwtToken;
+using InfrastructureLayer.Interceptors;
 using InfrastructureLayer.Repositories;
 using InfrastructureLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -21,6 +22,7 @@ namespace ApplicationLayer.DependencyInjection
         {
             services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer()); 
             services.AddAuthenticationCustome(config);
+            services.AddScoped<PublishDomainEventInterceptors>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMenuRepository, MenuRepository>(); 

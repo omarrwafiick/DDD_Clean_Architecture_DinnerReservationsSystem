@@ -10,8 +10,7 @@ namespace DomainLayer.DinnerAggregate
 {
     public sealed class Dinner : AggregateRoot<DinnerId>
     {
-        private Dinner() { }
-         
+        private Dinner() { } 
         public string Name { get; private set;}
         public string Description { get; private set;}
         public DinnerStatus DinnerStatus { get; private set;}
@@ -77,7 +76,7 @@ namespace DomainLayer.DinnerAggregate
         )
         {
             return new Dinner(
-                dinnerId: DinnerId.Create(),
+                dinnerId: DinnerId.Create(Guid.NewGuid()),
                 name: name,
                 description: description,
                 dinnerStatus: dinnerStatus,

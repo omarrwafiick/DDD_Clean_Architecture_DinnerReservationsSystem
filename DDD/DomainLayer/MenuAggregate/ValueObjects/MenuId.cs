@@ -1,11 +1,11 @@
 ﻿
-using DomainLayer.Common.BaseClasses;
-using DomainLayer.GuestAggregate.ValueObjects;
+using DomainLayer.Common.BaseClasses; 
 
 namespace DomainLayer.MenuAggregate.ValueObjects
 {
     public class MenuId : ValueObject
     {
+        private MenuId() { }
         public Guid Value { get; private set;}
         private MenuId(Guid value)
         {

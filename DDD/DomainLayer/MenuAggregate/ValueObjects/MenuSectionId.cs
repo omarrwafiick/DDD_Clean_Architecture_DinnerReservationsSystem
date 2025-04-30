@@ -5,12 +5,13 @@ namespace DomainLayer.MenuAggregate.ValueObjects
 {
     public class MenuSectionId : ValueObject
     {
+        private MenuSectionId() { }
         public Guid Value { get; private set;}
         private MenuSectionId(Guid value)
         {
             Value = value;
         }
-        public static MenuSectionId Create(Guid value) => new MenuSectionId(value);
+        public static MenuSectionId Create(Guid value) => new MenuSectionId(value); 
         public static MenuSectionId Create() => new MenuSectionId(Guid.NewGuid());
         public override IEnumerable<object> GetEqualityComponents()
         {

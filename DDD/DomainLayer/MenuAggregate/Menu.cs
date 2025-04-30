@@ -3,15 +3,15 @@ using DomainLayer.Common.ValueObjects;
 using DomainLayer.DinnerAggregate.ValueObjects;
 using DomainLayer.HostAggregate.ValueObjects;
 using DomainLayer.MenuAggregate.Entities;
+using DomainLayer.MenuAggregate.Events;
 using DomainLayer.MenuAggregate.ValueObjects;
 using DomainLayer.MenuReviewAggregate.ValueObjects;
  
 namespace DomainLayer.MenuAggregate
 {
-    public sealed class Menu : AggregateRoot<MenuId>
-    //menuId → passed to AggregateRoot → passed to Entity → stored in Id property.
+    public sealed class Menu : AggregateRoot<MenuId> 
     {
-        public Menu() { }
+        private Menu() { }
         private readonly List<MenuSection> _sections = new();
         private readonly List<DinnerId> _dinners = new();
         private readonly List<MenuReviewId> _reviews = new ();
@@ -39,7 +39,9 @@ namespace DomainLayer.MenuAggregate
             AverageRating = AverageRating.Create();
         }  
         public static Menu Create(string name, string description, HostId hostId, List<MenuSection> sections) {
-            return new Menu(MenuId.Create(), name, description, hostId, sections, DateTime.UtcNow, DateTime.UtcNow);
+           var menu = new Menu(MenuId.Create(Guid.NewGuid()), name, description, hostId, sections, DateTime.UtcNow, DateTime.UtcNow);
+           menu.AddDomainEvent(new MenuCreated(menu));
+           return menu;
         }
     }
 }

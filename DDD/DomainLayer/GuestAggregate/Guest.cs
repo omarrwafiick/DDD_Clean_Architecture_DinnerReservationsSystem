@@ -10,7 +10,7 @@ namespace DomainLayer.GuestAggregate
 {
     public sealed class Guest : AggregateRoot<GuestId>
     {
-        public Guest() { }
+        private Guest() { }
         public string FirstName { get; private set;}
         public string LastName { get; private set;}
         public string ProfileImage { get; private set;}
