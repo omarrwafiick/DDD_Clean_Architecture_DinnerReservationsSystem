@@ -7,7 +7,7 @@ using DomainLayer.HostAggregate.ValueObjects;
 
 namespace DomainLayer.BillAggregate
 {
-    public sealed class Bill : AggregateRoot<BillId>
+    public sealed class Bill : AggregateRoot<BillId> 
     { 
         private Bill() { }
         public DinnerId DinnerId { get; private set;}

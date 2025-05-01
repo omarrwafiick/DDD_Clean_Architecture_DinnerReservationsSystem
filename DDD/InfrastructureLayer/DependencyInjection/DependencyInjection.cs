@@ -20,7 +20,7 @@ namespace ApplicationLayer.DependencyInjection
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager config)
         {
-            services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer()); 
+            services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(config.GetConnectionString("DefaultConnection"))); 
             services.AddAuthenticationCustome(config);
             services.AddScoped<PublishDomainEventInterceptors>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();

@@ -9,7 +9,7 @@ using DomainLayer.MenuAggregate.ValueObjects;
 namespace DomainLayer.DinnerAggregate
 {
     public sealed class Dinner : AggregateRoot<DinnerId>
-    {
+    { 
         private Dinner() { } 
         public string Name { get; private set;}
         public string Description { get; private set;}
@@ -21,12 +21,12 @@ namespace DomainLayer.DinnerAggregate
         public MenuId MenuId { get; private set;}
         public string ImageUrl { get; private set;}
         public Location Location { get; private set;}
-        private readonly List<Reservation> _reservations = new();
+        private readonly List<Reservation> _reservationIds = new();
         public DateTime StartedAt { get; private set;}
         public DateTime EndedAt { get; private set;}
         public DateTime CreatedAt { get; private set;}
         public DateTime UpdatedAt { get; private set;}
-        public IReadOnlyList<Reservation> Reservations => _reservations.AsReadOnly();
+        public IReadOnlyList<Reservation> ReservationIds => _reservationIds.AsReadOnly();
 
         private Dinner(
         DinnerId dinnerId,
@@ -40,8 +40,7 @@ namespace DomainLayer.DinnerAggregate
         MenuId menuId,
         string imageUrl,
         Location location,
-        DateTime startedAt,
-        DateTime endedAt,
+        DateTime startedAt, 
         DateTime createdAt,
         DateTime updatedAt
     ) : base(dinnerId)
@@ -56,8 +55,7 @@ namespace DomainLayer.DinnerAggregate
             MenuId = menuId;
             ImageUrl = imageUrl;
             Location = location;
-            StartedAt = startedAt;
-            EndedAt = endedAt;
+            StartedAt = startedAt; 
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
         }
@@ -87,8 +85,7 @@ namespace DomainLayer.DinnerAggregate
                 menuId: menuId,
                 imageUrl: imageUrl,
                 location: location,
-                startedAt: DateTime.UtcNow,
-                endedAt: DateTime.UtcNow,
+                startedAt: DateTime.UtcNow, 
                 createdAt: DateTime.UtcNow,
                 updatedAt: DateTime.UtcNow
             );

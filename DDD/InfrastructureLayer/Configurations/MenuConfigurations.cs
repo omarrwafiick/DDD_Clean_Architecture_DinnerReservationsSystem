@@ -13,7 +13,7 @@ namespace InfrastructureLayer.Configurations
             ConfigMenuTable(builder);
             ConfigMenuEntitiesTable(builder);
             ConfigMenuReviewsIdsTable(builder);
-            ConfigMenuDinnerIdsTable(builder);
+            ConfigMenuDinnerIdsTable(builder); 
         }
 
         private void ConfigMenuTable(EntityTypeBuilder<Menu> builder)
@@ -39,7 +39,7 @@ namespace InfrastructureLayer.Configurations
 
         private void ConfigMenuEntitiesTable(EntityTypeBuilder<Menu> builder)
         {
-            builder.OwnsMany(o => o.MenuSections, ms =>
+            builder.OwnsMany(o => o.MenuSectionIds, ms =>
             {
                 ms.ToTable("MenuSections");
 
@@ -82,7 +82,7 @@ namespace InfrastructureLayer.Configurations
                 ms.Navigation(i => i.MenuItems).UsePropertyAccessMode(PropertyAccessMode.Field);
             });
 
-            builder.Metadata.FindNavigation(nameof(Menu.MenuSections))!
+            builder.Metadata.FindNavigation(nameof(Menu.MenuSectionIds))!
                 .SetPropertyAccessMode(PropertyAccessMode.Field);
         }
 
@@ -100,9 +100,9 @@ namespace InfrastructureLayer.Configurations
                     .HasColumnName("MenuReviewId");
             });
 
-            builder.Metadata.FindNavigation(nameof(Menu.MenuReviewIds))!
-                .SetPropertyAccessMode(PropertyAccessMode.Field);  
-
+            builder.Metadata
+                .FindNavigation(nameof(Menu.MenuReviewIds))!
+                .SetPropertyAccessMode(PropertyAccessMode.Field); 
         }
 
         private void ConfigMenuDinnerIdsTable(EntityTypeBuilder<Menu> builder)
@@ -119,8 +119,9 @@ namespace InfrastructureLayer.Configurations
                     .HasColumnName("DinnerId");
             });
 
-            builder.Metadata.FindNavigation(nameof(Menu.DinnerIds))!
-                .SetPropertyAccessMode(PropertyAccessMode.Field); 
+            builder.Metadata
+                .FindNavigation(nameof(Menu.DinnerIds))!
+                .SetPropertyAccessMode(PropertyAccessMode.Field);
 
         }
     }

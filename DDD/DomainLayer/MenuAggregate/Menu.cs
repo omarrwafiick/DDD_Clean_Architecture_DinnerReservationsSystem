@@ -12,18 +12,18 @@ namespace DomainLayer.MenuAggregate
     public sealed class Menu : AggregateRoot<MenuId> 
     {
         private Menu() { }
-        private readonly List<MenuSection> _sections = new();
-        private readonly List<DinnerId> _dinners = new();
-        private readonly List<MenuReviewId> _reviews = new ();
+        private readonly List<MenuSection> _menuSectionIds = new();
+        private readonly List<DinnerId> _dinnerIds = new();
+        private readonly List<MenuReviewId> _menuReviewIds = new ();
 
         public string Name { get; private set;}
         public string Description { get; private set;}
         public AverageRating AverageRating { get; private set;}
         public HostId HostId { get; private set;}
 
-        public IReadOnlyList<MenuSection> MenuSections  => _sections.AsReadOnly();
-        public IReadOnlyList<DinnerId> DinnerIds => _dinners.AsReadOnly();
-        public IReadOnlyList<MenuReviewId> MenuReviewIds => _reviews.AsReadOnly();
+        public IReadOnlyList<MenuSection> MenuSectionIds  => _menuSectionIds.AsReadOnly();
+        public IReadOnlyList<DinnerId> DinnerIds => _dinnerIds.AsReadOnly();
+        public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
 
         public DateTime CreatedAt { get; private set;}
         public DateTime UpdatedAt { get; private set;}
@@ -33,7 +33,7 @@ namespace DomainLayer.MenuAggregate
             Name = name;
             Description = description;
             HostId = hostId;
-            _sections = sections;
+            _menuSectionIds = sections;
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
             AverageRating = AverageRating.Create();
