@@ -25,7 +25,9 @@ namespace ApplicationLayer.DependencyInjection
             services.AddScoped<PublishDomainEventInterceptors>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IMenuRepository, MenuRepository>(); 
+            services.AddScoped(typeof(ICreateRepository<>), typeof(CreateRepository<>));
+            services.AddScoped(typeof(IUpdateRepository<>), typeof(UpdateRepository<>));
+            services.AddScoped(typeof(IGetRepository<>), typeof(GetRepository<>)); 
             return services;
         }
 

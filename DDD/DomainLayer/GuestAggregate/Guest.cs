@@ -32,6 +32,10 @@ namespace DomainLayer.GuestAggregate
         public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
         public IReadOnlyList<RatingId> RatingIds => _ratingIds.AsReadOnly();
 
+        public void AddBill(BillId billId)
+        {
+            _billIds.Add(billId);
+        }
         private Guest(
            GuestId guestId,
            string firstName,

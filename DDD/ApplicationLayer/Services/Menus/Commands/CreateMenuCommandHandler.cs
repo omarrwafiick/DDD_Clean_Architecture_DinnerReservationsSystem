@@ -9,11 +9,11 @@ namespace ApplicationLayer.Services.Menus.Commands
 {
     public class CreateMenuCommandHandler : IRequestHandler<CreateMenuCommand, Result<Menu>>
     {
-        private readonly IMenuRepository _menuRepository;
-        public CreateMenuCommandHandler(IMenuRepository menuRepository)
+        private readonly ICreateRepository<Menu> _menuRepository;
+        public CreateMenuCommandHandler(ICreateRepository<Menu> menuRepository)
         {
             _menuRepository = menuRepository;
-        }
+        } 
         public async Task<Result<Menu>> Handle(CreateMenuCommand request, CancellationToken cancellationToken)
         {
             var menu = Menu.Create(

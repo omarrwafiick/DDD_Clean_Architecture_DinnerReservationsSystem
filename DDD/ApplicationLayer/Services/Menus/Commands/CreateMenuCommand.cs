@@ -13,7 +13,7 @@ namespace ApplicationLayer.Services.Menus.Commands
         string HostId,
         List<MenuSectionCommand> Sections
     ) : IRequest<Result<Menu>>;
-    public record MenuSectionCommand(
+    public record MenuSectionCommand( 
         string Name, 
         string Description, 
         List<MenuItemCommand> Items

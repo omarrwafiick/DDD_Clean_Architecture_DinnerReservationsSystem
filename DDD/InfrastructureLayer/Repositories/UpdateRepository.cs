@@ -1,20 +1,19 @@
-﻿
+﻿ 
 using ApplicationLayer.Common.Interfaces.Repositories;
-using DomainLayer.MenuAggregate;
 using InfrastructureLayer.Data;
 
 namespace InfrastructureLayer.Repositories
 {
-    public class MenuRepository : IMenuRepository
+    public class UpdateRepository<T> : IUpdateRepository<T> where T : class
     {
         private readonly ApplicationDbContext _context;
-        public MenuRepository(ApplicationDbContext context)
+        public UpdateRepository(ApplicationDbContext context)
         {
             _context = context;
         }
-        public async Task AddAsync(Menu menu)
+        public async Task UpdateAsync(T data)
         {
-            await _context.AddAsync(menu);
+            await Task.Run(() => _context.Set<T>().Update(data));
             await _context.SaveChangesAsync();
         }
     }

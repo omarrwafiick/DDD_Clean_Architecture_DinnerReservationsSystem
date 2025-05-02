@@ -1,4 +1,6 @@
-﻿
+﻿using ApplicationLayer.Services.Bills.Commands;
+using ApplicationLayer.Services.Bills.Queries;
+using Contracts.Bills;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -12,18 +14,19 @@ namespace PresentationLayer.Controllers
     public class PaymentsController(ISender mediator, IMapper mapper) : ControllerBase
     {
         [HttpPost("{guestid}")]
-        public async Task<IActionResult> Bill([FromRoute] string guestid)
+        public async Task<IActionResult> Bill([FromRoute] string guestid, [FromBody] CreateBillRequest data)
         {
-            return Ok();
-
+            var command = mapper.Map<CreateBillCommand>((data, guestid));
+            var createResult = await mediator.Send(command);
+            return Ok(createResult);
         }
 
         [HttpGet("{guestid/billid}")]
         public async Task<IActionResult> GetBill([FromRoute] string guestid, [FromRoute] string billid)
         {
-            return Ok(); 
-
-        }
-
+            var query = new GetBillQuery(guestid, billid);
+            var queryResult = await mediator.Send(query);
+            return Ok(queryResult);
+        } 
     }
 }

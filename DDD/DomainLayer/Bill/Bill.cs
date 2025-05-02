@@ -26,7 +26,7 @@ namespace DomainLayer.BillAggregate
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
         }
-        public static Bill Create(string name, DinnerId dinnerId, GuestId guestId, HostId hostId, Price price)
+        public static Bill Create(DinnerId dinnerId, GuestId guestId, HostId hostId, Price price)
         {
             return new Bill(BillId.Create(), dinnerId, guestId, hostId, price, DateTime.UtcNow, DateTime.UtcNow);
         } 

@@ -16,6 +16,10 @@ namespace DomainLayer.DinnerAggregate.Entities
         public DateTime ArrivalDateTime { get; private set;}
         public DateTime CreatedAt { get; private set;}
         public DateTime UpdatedAt { get; private set;}
+
+        public void GuestArrived(DateTime ArrivalTime) {
+            ArrivalDateTime = ArrivalTime;
+        }
         private Reservation(
             ReservationId id, int guestCount, ReservationStatus reservationStatus, GuestId guestId, BillId billId,
             DateTime createdAt, DateTime updatedAt

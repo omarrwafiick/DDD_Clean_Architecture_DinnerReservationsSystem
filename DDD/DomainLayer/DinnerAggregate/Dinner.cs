@@ -28,21 +28,33 @@ namespace DomainLayer.DinnerAggregate
         public DateTime UpdatedAt { get; private set;}
         public IReadOnlyList<Reservation> ReservationIds => _reservationIds.AsReadOnly();
 
+        public void AddReservation(Reservation reservation)
+        {
+            _reservationIds.Add(reservation);
+        }
+        public void StartDinner(DateTime startAt)
+        {
+            StartedAt = startAt;
+        }
+        public void EndDinner(DateTime endAt)
+        {
+            EndedAt = endAt;
+        } 
         private Dinner(
         DinnerId dinnerId,
         string name,
         string description,
         DinnerStatus dinnerStatus,
-        Price price,
+        Price price, 
         bool isPublic,
         int maxGuests,
         HostId hostId,
         MenuId menuId,
         string imageUrl,
-        Location location,
-        DateTime startedAt, 
+        Location location,  
         DateTime createdAt,
-        DateTime updatedAt
+        DateTime updatedAt,
+        List<Reservation> reservations
     ) : base(dinnerId)
         {
             Name = name;
@@ -54,10 +66,10 @@ namespace DomainLayer.DinnerAggregate
             HostId = hostId;
             MenuId = menuId;
             ImageUrl = imageUrl;
-            Location = location;
-            StartedAt = startedAt; 
+            Location = location; 
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
+            _reservationIds = reservations;
         }
 
         public static Dinner Create(
@@ -70,7 +82,8 @@ namespace DomainLayer.DinnerAggregate
             HostId hostId,
             MenuId menuId,
             string imageUrl,
-            Location location
+            Location location,
+            List<Reservation> reservations
         )
         {
             return new Dinner(
@@ -84,10 +97,10 @@ namespace DomainLayer.DinnerAggregate
                 hostId: hostId,
                 menuId: menuId,
                 imageUrl: imageUrl,
-                location: location,
-                startedAt: DateTime.UtcNow, 
+                location: location,  
                 createdAt: DateTime.UtcNow,
-                updatedAt: DateTime.UtcNow
+                updatedAt: DateTime.UtcNow,
+                reservations : reservations
             );
         }
     }

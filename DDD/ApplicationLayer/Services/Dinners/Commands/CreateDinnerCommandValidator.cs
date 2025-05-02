@@ -8,7 +8,7 @@ namespace ApplicationLayer.Services.Dinners.Commands
         public CreateDinnerCommandValidator() {
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.Description).NotEmpty();
-            RuleFor(x => x.Sections).NotEmpty(); 
+            RuleFor(x => x.HostId).NotEmpty(); 
         }
     }
 }
