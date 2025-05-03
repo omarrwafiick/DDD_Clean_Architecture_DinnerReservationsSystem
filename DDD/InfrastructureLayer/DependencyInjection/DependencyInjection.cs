@@ -1,13 +1,11 @@
 ﻿using ApplicationLayer.Common.Interfaces.JwtToken;
 using ApplicationLayer.Common.Interfaces.Repositories;
-using ApplicationLayer.Common.Services;
-using InfrastructureLayer.Data;
+using ApplicationLayer.Common.Services; 
 using InfrastructureLayer.Implementations.JwtToken;
 using InfrastructureLayer.Interceptors;
 using InfrastructureLayer.Repositories;
 using InfrastructureLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -20,14 +18,16 @@ namespace ApplicationLayer.DependencyInjection
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, ConfigurationManager config)
         {
-            services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(config.GetConnectionString("DefaultConnection"))); 
+            //services.AddDbContext<ApplicationDbContext>(o => o.UseSqlServer(config.GetConnectionString("DefaultConnection"))); 
             services.AddAuthenticationCustome(config);
             services.AddScoped<PublishDomainEventInterceptors>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped(typeof(ICreateRepository<>), typeof(CreateRepository<>));
             services.AddScoped(typeof(IUpdateRepository<>), typeof(UpdateRepository<>));
-            services.AddScoped(typeof(IGetRepository<>), typeof(GetRepository<>)); 
+            services.AddScoped(typeof(IGetRepository<,>), typeof(GetRepository<,>));
+            services.AddScoped<IGetDinnerRepository, GetDinnerRepository>();
+            services.AddScoped<IGetGuestRepository, GetGuestRepository>();
             return services;
         }
 

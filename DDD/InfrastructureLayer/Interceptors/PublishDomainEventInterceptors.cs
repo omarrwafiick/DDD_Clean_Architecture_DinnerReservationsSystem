@@ -1,5 +1,4 @@
-﻿
-using DomainLayer.Common.BaseClasses;
+﻿using DomainLayer.Common.BaseClasses;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -13,6 +12,7 @@ namespace InfrastructureLayer.Interceptors
         {
             _mediator = mediator;
         }
+        public PublishDomainEventInterceptors() { }
         public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
         {
             PublicDomainEvents(eventData.Context).GetAwaiter().GetResult();

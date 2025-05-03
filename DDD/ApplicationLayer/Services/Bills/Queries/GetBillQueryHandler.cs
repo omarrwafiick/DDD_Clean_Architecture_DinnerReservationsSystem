@@ -8,8 +8,8 @@ namespace ApplicationLayer.Services.Bills.Commands
 {
     public class GetBillQueryHandler : IRequestHandler<GetBillQuery, Result<Bill>>
     { 
-        private readonly IGetRepository<Bill> _billRepository;
-        public GetBillQueryHandler(IGetRepository<Bill> billRepository)
+        private readonly IGetRepository<Bill, Guid> _billRepository;
+        public GetBillQueryHandler(IGetRepository<Bill, Guid> billRepository)
         {
             _billRepository = billRepository;
         }

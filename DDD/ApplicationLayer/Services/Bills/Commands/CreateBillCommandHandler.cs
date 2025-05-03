@@ -13,8 +13,8 @@ namespace ApplicationLayer.Services.Bills.Commands
     public class CreateBillQueryHandler : IRequestHandler<CreateBillCommand, Result<Bill>>
     {
         private readonly ICreateRepository<Bill> _billRepository;
-        private readonly IGetRepository<Guest> _guestRepository;
-        public CreateBillQueryHandler(ICreateRepository<Bill> billRepository, IGetRepository<Guest> guestRepository)
+        private readonly IGetRepository<Guest, Guid> _guestRepository;
+        public CreateBillQueryHandler(ICreateRepository<Bill> billRepository, IGetRepository<Guest, Guid> guestRepository)
         {
             _billRepository = billRepository;
             _guestRepository = guestRepository;

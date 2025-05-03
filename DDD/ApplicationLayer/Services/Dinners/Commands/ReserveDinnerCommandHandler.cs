@@ -12,11 +12,11 @@ namespace ApplicationLayer.Services.Dinners.Commands
     public class ReserveDinnerCommandHandler : IRequestHandler<ReserveDinnerCommand, Result<Reservation>>
     {
         private readonly ICreateRepository<Reservation> _reservationRepository;
-        private readonly IGetRepository<Dinner> _dinnerRepository;
+        private readonly IGetRepository<Dinner, Guid> _dinnerRepository;
         private readonly IUpdateRepository<Dinner> _updateDinnerRepository;
         public ReserveDinnerCommandHandler(
             ICreateRepository<Reservation> reservationRepository, 
-            IGetRepository<Dinner> dinnerRepository,
+            IGetRepository<Dinner, Guid> dinnerRepository,
             IUpdateRepository<Dinner> updateDinnerRepository)
         {
             _reservationRepository = reservationRepository;

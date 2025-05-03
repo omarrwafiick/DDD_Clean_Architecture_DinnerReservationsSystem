@@ -7,20 +7,19 @@ namespace ApplicationLayer.Services.Dinners.Commands
 {
     public class GuestArrivedAtCommandHandler : IRequestHandler<GuestArrivedAtCommand, Result<Dinner>>
     {
-        private readonly IGetRepository<Dinner> _dinnerRepository;
         private readonly IUpdateRepository<Dinner> _updateDinnerRepository;
+        private readonly IGetDinnerRepository _getDinnerRepository;
         public GuestArrivedAtCommandHandler( 
-            IGetRepository<Dinner> dinnerRepository,
-            IUpdateRepository<Dinner> updateDinnerRepository)
+            IUpdateRepository<Dinner> updateDinnerRepository,
+            IGetDinnerRepository getDinnerRepository)
         { 
-            _dinnerRepository = dinnerRepository;
             _updateDinnerRepository = updateDinnerRepository;
+            _getDinnerRepository = getDinnerRepository;
         }
 
         public async Task<Result<Dinner>> Handle(GuestArrivedAtCommand request, CancellationToken cancellationToken)
         {
-            var dinner = await _dinnerRepository.GetAsync(Guid.Parse(request.DinnerId),
-                x => x.ReservationIds.Any(x => x.Id.Value == Guid.Parse(request.ReservationId)));
+            var dinner = await _getDinnerRepository.GetDinnerAsync(Guid.Parse(request.DinnerId));
             dinner.ReservationIds.FirstOrDefault()!.GuestArrived(request.ArrivalDateTime);
             await _updateDinnerRepository.UpdateAsync(dinner);
             return dinner;

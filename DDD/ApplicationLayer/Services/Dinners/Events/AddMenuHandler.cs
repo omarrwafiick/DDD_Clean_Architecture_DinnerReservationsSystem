@@ -7,6 +7,7 @@ namespace DomainLayer.DinnerAggregate.Events
     {
         public Task Handle(MenuCreated notification, CancellationToken cancellationToken)
         {
+            //handle side effects due to creating new menu
             throw new NotImplementedException();
         }
     }

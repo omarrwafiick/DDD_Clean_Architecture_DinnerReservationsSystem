@@ -7,10 +7,10 @@ namespace ApplicationLayer.Services.Dinners.Commands
 {
     public class StartDinnerCommandHandler : IRequestHandler<StartDinnerCommand, Result<Dinner>>
     { 
-        private readonly IGetRepository<Dinner> _dinnerRepository;
+        private readonly IGetRepository<Dinner, Guid> _dinnerRepository;
         private readonly IUpdateRepository<Dinner> _updateDinnerRepository;
         public StartDinnerCommandHandler( 
-            IGetRepository<Dinner> dinnerRepository,
+            IGetRepository<Dinner, Guid> dinnerRepository,
             IUpdateRepository<Dinner> updateDinnerRepository)
         { 
             _dinnerRepository = dinnerRepository;
