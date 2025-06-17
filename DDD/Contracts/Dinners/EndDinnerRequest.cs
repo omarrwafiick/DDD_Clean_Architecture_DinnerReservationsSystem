@@ -2,6 +2,6 @@
 namespace Contracts.Dinners
 {
     public record EndDinnerRequest(
-        Guid Id
+        string Id
     );
 }

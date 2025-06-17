@@ -3,6 +3,7 @@ using DomainLayer.BillAggregate.ValueObjects;
 using DomainLayer.DinnerAggregate;
 using DomainLayer.DinnerAggregate.Entities;
 using DomainLayer.DinnerAggregate.Enums;
+using DomainLayer.DinnerAggregate.ValueObjects;
 using DomainLayer.GuestAggregate.ValueObjects;
 using FluentResults;
 using MediatR;
@@ -12,11 +13,11 @@ namespace ApplicationLayer.Services.Dinners.Commands
     public class ReserveDinnerCommandHandler : IRequestHandler<ReserveDinnerCommand, Result<Reservation>>
     {
         private readonly ICreateRepository<Reservation> _reservationRepository;
-        private readonly IGetRepository<Dinner, Guid> _dinnerRepository;
+        private readonly IGetRepository<Dinner, DinnerId> _dinnerRepository;
         private readonly IUpdateRepository<Dinner> _updateDinnerRepository;
         public ReserveDinnerCommandHandler(
             ICreateRepository<Reservation> reservationRepository, 
-            IGetRepository<Dinner, Guid> dinnerRepository,
+            IGetRepository<Dinner, DinnerId> dinnerRepository,
             IUpdateRepository<Dinner> updateDinnerRepository)
         {
             _reservationRepository = reservationRepository;
@@ -25,7 +26,7 @@ namespace ApplicationLayer.Services.Dinners.Commands
         }
         public async Task<Result<Reservation>> Handle(ReserveDinnerCommand request, CancellationToken cancellationToken)
         { 
-            var dinner = await _dinnerRepository.GetAsync(Guid.Parse(request.DinnerId)); 
+            var dinner = await _dinnerRepository.GetAsync(DinnerId.Create(Guid.Parse(request.DinnerId))); 
             var reservation = Reservation.Create(
                  request.GuestCount,
                  ReservationStatus.Reserved,

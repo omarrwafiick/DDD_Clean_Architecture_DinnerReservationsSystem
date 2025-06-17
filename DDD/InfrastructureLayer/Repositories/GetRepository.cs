@@ -15,9 +15,11 @@ namespace InfrastructureLayer.Repositories
         {
             _context = context;
         }
-        public Task<T> GetAsync(TID id) => _context.Set<T>().SingleOrDefaultAsync(x=>x.Id.Equals(id))!;
+        public async Task<T> GetAsync(TID id) 
+            => await _context.Set<T>().SingleOrDefaultAsync(x=>x.Id.Equals(id))!;
 
-        public Task<T> GetAsync(TID id, Expression<Func<T, bool>> condition) => _context.Set<T>().Where(condition).SingleOrDefaultAsync(x => x.Id.Equals(id))!;
+        public async Task<T> GetAsync(TID id, Expression<Func<T, bool>> condition) 
+            => await _context.Set<T>().Where(condition).SingleOrDefaultAsync(x => x.Id.Equals(id))!;
 
     }
 }

@@ -13,15 +13,15 @@ namespace ApplicationLayer.Services.Bills.Commands
     public class CreateBillQueryHandler : IRequestHandler<CreateBillCommand, Result<Bill>>
     {
         private readonly ICreateRepository<Bill> _billRepository;
-        private readonly IGetRepository<Guest, Guid> _guestRepository;
-        public CreateBillQueryHandler(ICreateRepository<Bill> billRepository, IGetRepository<Guest, Guid> guestRepository)
+        private readonly IGetRepository<Guest, GuestId> _guestRepository;
+        public CreateBillQueryHandler(ICreateRepository<Bill> billRepository, IGetRepository<Guest, GuestId> guestRepository)
         {
             _billRepository = billRepository;
             _guestRepository = guestRepository;
         }
         public async Task<Result<Bill>> Handle(CreateBillCommand request, CancellationToken cancellationToken)
         {
-            var guest = await _guestRepository.GetAsync(Guid.Parse(request.GuestId));
+            var guest = await _guestRepository.GetAsync(GuestId.Create(Guid.Parse(request.GuestId)));
             if (guest is null) return null!;
             var bill = Bill.Create(
                 DinnerId.Create(Guid.Parse(request.DinnerId)),

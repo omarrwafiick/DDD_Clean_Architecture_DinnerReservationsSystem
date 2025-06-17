@@ -2,7 +2,7 @@
 
 namespace DomainLayer.Common.BaseClasses
 {
-    public abstract class Entity<TID> : IEquatable<Entity<TID>>,
+    public abstract class Entity<TID>: IEquatable<Entity<TID>>,
         IHasDomainEvents where TID : notnull
     {
         private readonly List<IDomainEvent> _domainEvents = new();

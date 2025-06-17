@@ -1,18 +1,16 @@
 ﻿using ApplicationLayer.Services.Dinners.Commands; 
 using Contracts.Dinners;
 using MapsterMapper;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
+using MediatR; 
 using Microsoft.AspNetCore.Mvc;  
 
 namespace PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Route("api/dinners")] 
     public class DinnersController(ISender mediator, IMapper mapper) : ControllerBase
     {
-        [HttpPost("{hostid}")]
+        [HttpPost("create/{hostid}")]
         public async Task<IActionResult> CreateDinner([FromRoute] string hostid, [FromBody] CreateDinnerRequest data)
         {
             var command = mapper.Map<CreateDinnerCommand>((data, hostid));
@@ -20,7 +18,7 @@ namespace PresentationLayer.Controllers
             return Ok(createResult); 
         }
 
-        [HttpPost("{guestid/dinnerid}")]
+        [HttpPost("reserve/{guestid}/{dinnerid}")]
         public async Task<IActionResult> ReserveDinner([FromRoute] string guestid, [FromRoute] string dinnerid, [FromBody] ReserveDinnerRequest data)
         {
             var command = mapper.Map<ReservationCommand>((data, guestid, dinnerid));
@@ -28,7 +26,7 @@ namespace PresentationLayer.Controllers
             return Ok(createResult);
         }
 
-        [HttpPost("{hostid/dinnerid}")]
+        [HttpPost("start/{hostid}/{dinnerid}")]
         public async Task<IActionResult> StartDinner([FromRoute] string hostid, [FromRoute] string dinnerid, [FromBody] StartDinnerRequest data)
         {
             var command = mapper.Map<StartDinnerCommand>((data, hostid, dinnerid));
@@ -36,7 +34,7 @@ namespace PresentationLayer.Controllers
             return Ok(result);
         }
 
-        [HttpPost("{reservationId/dinnerid}")]
+        [HttpPost("arrived/{reservationId}/{dinnerid}")]
         public async Task<IActionResult> GuestArrivedAt([FromRoute] string reservationId, [FromRoute] string dinnerid, [FromBody] GuestArrivedAtRequest data)
         { 
             var command = mapper.Map<GuestArrivedAtCommand>((data, reservationId, dinnerid));
@@ -44,7 +42,7 @@ namespace PresentationLayer.Controllers
             return Ok(result); 
         }
 
-        [HttpPost("{hostid/dinnerid}")]
+        [HttpPost("end/{hostid}/{dinnerid}")]
         public async Task<IActionResult> EndDinner([FromRoute] string hostid, [FromRoute] string dinnerid, [FromBody] EndDinnerRequest data)
         {
             var command = mapper.Map<EndDinnerCommand>((data, hostid, dinnerid));

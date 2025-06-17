@@ -13,7 +13,7 @@ namespace InfrastructureLayer.Repositories
         }
         public async Task UpdateAsync(T data)
         {
-            await Task.Run(() => _context.Set<T>().Update(data));
+            _context.Set<T>().Update(data);
             await _context.SaveChangesAsync();
         }
     }

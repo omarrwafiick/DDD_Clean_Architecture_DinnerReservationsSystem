@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/menus")]
     public class MenusController(ISender mediator, IMapper mapper) : ControllerBase
     {
-        [HttpPost("{hostid:guid}")]
-        public async Task<IActionResult> Create([FromBody] CreateMenuRequest data, [FromRoute] Guid hostid)
+        [HttpPost("{hostid}")]
+        public async Task<IActionResult> Create([FromBody] CreateMenuRequest data, [FromRoute] string hostid)
         {
             var command = mapper.Map<CreateMenuCommand>((data, hostid));
             var createResult = await mediator.Send(command);

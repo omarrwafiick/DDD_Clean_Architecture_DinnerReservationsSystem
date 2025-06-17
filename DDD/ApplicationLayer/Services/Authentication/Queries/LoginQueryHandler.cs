@@ -20,7 +20,7 @@ namespace ApplicationLayer.Services.Authentication.Queries
 
         public async Task<Result<AuthResult>> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
-            var user = _userRepository.GetUserByEmail(request.Email);
+            var user = await _userRepository.GetUserByEmail(request.Email);
             if (user is null)
             {
                 return Result.Fail<AuthResult>(

@@ -1,16 +1,29 @@
-using ApplicationLayer.DependencyInjection;
+﻿using ApplicationLayer.DependencyInjection;
 using PresentationLayer.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribute>());
-  
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration)
     .AddPresentation();
 
-var app = builder.Build(); 
+var app = builder.Build();
+ 
+try
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+catch (Exception ex)
+{
+    Console.WriteLine("swagger failed to start:");
+    Console.WriteLine(ex.ToString());
+}
 
 app.UseHttpsRedirection();
 

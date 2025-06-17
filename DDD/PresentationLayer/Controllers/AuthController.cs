@@ -5,12 +5,14 @@ using Contracts.Authentication;
 using FluentResults;
 using MapsterMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace PresentationLayer.Controllers 
+namespace PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController] 
+    [ApiController]
+    [Route("api/auth")]
+    [AllowAnonymous]
     public class AuthController(ISender mediator, IMapper mapper) : ErrorHandlerController
     {
         [HttpPost("register")]
@@ -20,7 +22,7 @@ namespace PresentationLayer.Controllers
             Result<AuthResult> result = await mediator.Send(command);
 
             return result.IsSuccess ? Ok(mapper.Map<AuthResponse>(result))
-                : Problem(result.Errors); 
+                : BadRequest(result.Errors); 
         }
 
 
@@ -30,7 +32,7 @@ namespace PresentationLayer.Controllers
             var query = mapper.Map<LoginQuery>(request);
             var result = await mediator.Send(query);
             return result.IsSuccess ? Ok(mapper.Map<AuthResponse>(result))
-                : Problem(result.Errors);
+                : BadRequest(result.Errors);
         } 
     }
      

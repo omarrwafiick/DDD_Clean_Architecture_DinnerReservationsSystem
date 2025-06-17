@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PresentationLayer.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    [Authorize] 
+    [Route("api/payments")] 
     public class PaymentsController(ISender mediator, IMapper mapper) : ControllerBase
     {
         [HttpPost("{guestid}")]
@@ -21,7 +20,7 @@ namespace PresentationLayer.Controllers
             return Ok(createResult);
         }
 
-        [HttpGet("{guestid/billid}")]
+        [HttpGet("{guestid}/{billid}")]
         public async Task<IActionResult> GetBill([FromRoute] string guestid, [FromRoute] string billid)
         {
             var query = new GetBillQuery(guestid, billid);

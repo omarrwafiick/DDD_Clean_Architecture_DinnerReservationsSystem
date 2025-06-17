@@ -6,7 +6,8 @@ namespace PresentationLayer.Controllers
 {  
     public class ErrorHandlerController : ControllerBase
     {
-        public IActionResult Problem(List<IError> errors)
+        [NonAction]
+        public IActionResult HandleErrors(List<IError> errors)
         {  
             var messages = errors.Select(e => e.Message).ToList();
              
